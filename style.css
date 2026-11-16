@@ -186,52 +186,14 @@ a { color: inherit; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 .tags li { font: 500 12px/1 var(--mono); padding: 7px 10px; border-radius: 6px; background: rgba(26,25,22,.06); color: var(--ink-2); }
 
-/* project "screens": drawn in CSS so the page stays HTML + CSS only */
+/* project screenshots */
 .shot {
-  position: relative; height: 230px; margin: 10px 10px 0; border-radius: 12px; overflow: hidden;
-  border: 1px solid var(--line);
+  margin: 10px 10px 0; border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--line); background: var(--paper-2);
+  aspect-ratio: 16 / 10;
 }
-.shot > :not(.shot__bar) { transition: transform .6s var(--ease); }
-.project:hover .shot > :not(.shot__bar) { transform: scale(1.03); }
-.shot__bar { position: relative; z-index: 1; display: flex; gap: 6px; padding: 12px 14px; }
-.shot__bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(0,0,0,.15); }
-
-.shot--care { background: #e6efe9; }
-.mock-site { display: grid; gap: 10px; padding: 6px 26px; }
-.mock-site span { display: block; border-radius: 5px; }
-.mock-site__nav { height: 8px; width: 40%; background: rgba(47,107,82,.35); margin-bottom: 8px; }
-.mock-site__h { height: 18px; width: 75%; background: var(--green); }
-.mock-site__h--short { width: 50%; }
-.mock-site__btn { height: 22px; width: 90px; border-radius: 999px !important; background: var(--accent); margin-top: 4px; }
-.mock-site__cards { display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px; }
-.mock-site__cards b { height: 46px; border-radius: 8px; background: #fff; box-shadow: 0 4px 10px -6px rgba(0,0,0,.2); }
-
-.shot--lumen { background: radial-gradient(circle at 50% 60%, #2b2a26, #121110 70%); }
-.shot--lumen .shot__bar i { background: rgba(255,255,255,.2); }
-.orb { position: absolute; inset: 0; display: grid; place-items: center; }
-.orb span {
-  width: 130px; height: 130px; border-radius: 50%;
-  background:
-    radial-gradient(circle at 35% 30%, #fff 0 6%, transparent 18%),
-    radial-gradient(circle at 60% 70%, rgba(194,80,28,.7), transparent 55%),
-    conic-gradient(from 200deg, #d9d6cf, #6c6a65, #f2efe8, #45433f, #d9d6cf);
-  box-shadow: 0 0 0 14px rgba(255,255,255,.06), 0 0 0 30px rgba(255,255,255,.03), 0 30px 60px -10px rgba(0,0,0,.8);
-  animation: spin 14s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
-.shot--shop { background: #f6e3d6; }
-.mock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 4px 22px; }
-.mock-grid b { height: 72px; border-radius: 8px; background: #fff; position: relative; }
-.mock-grid b::after { content: ""; position: absolute; left: 10px; right: 30%; bottom: 10px; height: 6px; border-radius: 3px; background: rgba(194,80,28,.45); }
-
-.shot--saas { background: #e4e9ee; }
-.mock-chat { display: grid; gap: 10px; padding: 6px 26px; }
-.mock-chat span { display: block; height: 26px; border-radius: 14px; }
-.mock-chat .in { width: 60%; background: #fff; }
-.mock-chat .in--short { width: 40%; }
-.mock-chat .out { width: 55%; justify-self: end; background: var(--ink); }
-.mock-chat .out--long { width: 70%; background: var(--green); }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .7s var(--ease); }
+.project:hover .shot img { transform: scale(1.03); }
 
 /* Contact */
 .contact__panel {
@@ -263,7 +225,6 @@ a { color: inherit; }
   .nav a { padding: 10px 9px; font-size: 14px; }
   .skills { grid-template-columns: 1fr; }
   .hero__actions .btn, .contact__actions .btn { width: 100%; }
-  .shot { height: 190px; }
   .facts div { flex-direction: column; gap: 2px; }
   .facts dd { text-align: left; }
 }
